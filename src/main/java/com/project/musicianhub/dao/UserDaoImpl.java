@@ -2,7 +2,6 @@ package com.project.musicianhub.dao;
 
 import java.util.List;
 
-import org.hibernate.CacheMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

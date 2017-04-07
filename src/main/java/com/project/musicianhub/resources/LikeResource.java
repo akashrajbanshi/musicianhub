@@ -1,6 +1,5 @@
 package com.project.musicianhub.resources;
 
-import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.Consumes;

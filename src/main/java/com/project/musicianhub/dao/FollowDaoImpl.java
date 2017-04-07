@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.Follow;
-import com.project.musicianhub.model.Music;
 
 /**
  * Dao implementation for follow

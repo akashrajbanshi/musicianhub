@@ -3,10 +3,7 @@ package com.project.musicianhub.service;
 import java.util.List;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.UriInfo;
 
 import org.glassfish.jersey.media.multipart.MultiPart;
 

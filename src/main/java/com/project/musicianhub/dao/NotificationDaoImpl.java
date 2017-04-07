@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.project.musicianhub.model.Like;
 import com.project.musicianhub.model.Notification;
 import com.project.musicianhub.model.NotificationFollow;
 import com.project.musicianhub.model.NotificationToken;

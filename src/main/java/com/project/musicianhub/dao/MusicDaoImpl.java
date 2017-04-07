@@ -3,13 +3,11 @@ package com.project.musicianhub.dao;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.CacheMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.Music;
-import com.project.musicianhub.model.User;
 
 /**
  * Dao implementation for Music
