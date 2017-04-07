@@ -40,7 +40,9 @@ public class NotificationServiceImpl implements NotificationService {
 	 * object and notification sender user object
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param notificationSenderUser
+	 *            user object
 	 */
 	@Override
 	public void addNotification(Notification notification, User notificationSenderUser) {
@@ -62,7 +64,9 @@ public class NotificationServiceImpl implements NotificationService {
 	 * sender user object
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param notificationSenderUser
+	 *            user object
 	 */
 	@Override
 	public void addNotificationFollow(Notification notification, User notificationSenderUser) {
@@ -107,6 +111,7 @@ public class NotificationServiceImpl implements NotificationService {
 	 * Creates the user notification token for the current user
 	 * 
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	@Override
 	public void addUserNotificationToken(NotificationToken notificationToken) {
@@ -140,8 +145,11 @@ public class NotificationServiceImpl implements NotificationService {
 	 * sends notification to the user
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param request
+	 *            http servlet request
 	 * @throws IOException
+	 *             input output exception
 	 */
 	@Override
 	public void sendNotification(Notification notification, HttpServletRequest request) throws IOException {
@@ -179,10 +187,13 @@ public class NotificationServiceImpl implements NotificationService {
 	 * Sets the notification information
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param noToken
 	 *            token number for the user
 	 * @param notificationSenderUser
+	 *            user object
 	 * @param request
+	 *            http servlet request
 	 * @return json object
 	 */
 	private JsonObject setNotificationInformation(Notification notification, NotificationToken noToken,
@@ -253,8 +264,11 @@ public class NotificationServiceImpl implements NotificationService {
 	 * 
 	 * @return http url connection
 	 * @throws MalformedURLException
+	 *             malformed url
 	 * @throws IOException
+	 *             input output exception
 	 * @throws ProtocolException
+	 *             wrong protocol
 	 */
 	private HttpURLConnection setupFCMConnection() throws MalformedURLException, IOException, ProtocolException {
 		URL url = new URL("https://fcm.googleapis.com/fcm/send");

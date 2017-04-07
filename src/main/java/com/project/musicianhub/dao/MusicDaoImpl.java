@@ -22,6 +22,7 @@ public class MusicDaoImpl implements MusicDao {
 	 * Adds music to the database
 	 * 
 	 * @param music
+	 *            music object
 	 * @return music object
 	 */
 	@Override
@@ -40,7 +41,9 @@ public class MusicDaoImpl implements MusicDao {
 	 * Adds music to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param music
+	 *            music object
 	 */
 	@Override
 	public void addMusic(Session session, Music music) {
@@ -101,6 +104,7 @@ public class MusicDaoImpl implements MusicDao {
 	 * Gets the music by id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @return music object
 	 */
 	@Override
@@ -122,7 +126,8 @@ public class MusicDaoImpl implements MusicDao {
 	 * Deletes the music by id
 	 * 
 	 * @param id
-	 * @return
+	 *            music id
+	 * @return delete success/failure as int
 	 */
 
 	@Override
@@ -146,7 +151,8 @@ public class MusicDaoImpl implements MusicDao {
 	 * Updates the music by music object
 	 * 
 	 * @param music
-	 * @return
+	 *            music object
+	 * @return update success/failure as int
 	 */
 
 	@Override
@@ -213,6 +219,7 @@ public class MusicDaoImpl implements MusicDao {
 	 * Searches for the music by the search text provided
 	 * 
 	 * @param searchText
+	 *            text used by user for a search
 	 * @return list of music
 	 */
 

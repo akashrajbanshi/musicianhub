@@ -96,7 +96,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * 
 	 * @param follow
 	 *            follow object
-	 * @return follow object
+	 * @return follow follow object
 	 */
 	@Override
 	public Follow getFollowByFollowingAndFollowerId(Follow follow) {

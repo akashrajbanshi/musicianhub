@@ -21,7 +21,8 @@ public class UserDaoImpl implements UserDao {
 	 * Adds user to the database
 	 * 
 	 * @param user
-	 * @return
+	 *            user object
+	 * @return user object
 	 */
 	@Override
 	public User addUser(User user) {
@@ -39,7 +40,9 @@ public class UserDaoImpl implements UserDao {
 	 * Adds user to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param user
+	 *            user object
 	 */
 	@Override
 	public void addUser(Session session, User user) {
@@ -49,7 +52,7 @@ public class UserDaoImpl implements UserDao {
 	/**
 	 * Gets all the user
 	 * 
-	 * @return
+	 * @return user list
 	 */
 	@Override
 	public List<User> getUsers() {
@@ -66,7 +69,8 @@ public class UserDaoImpl implements UserDao {
 	 * Deletes the user by id
 	 * 
 	 * @param id
-	 * @return
+	 *            user id
+	 * @return delete success/failure as int
 	 */
 	@Override
 	public int deleteUsers(int id) {
@@ -89,7 +93,8 @@ public class UserDaoImpl implements UserDao {
 	 * Updates the user
 	 * 
 	 * @param user
-	 * @return
+	 *            user object
+	 * @return update success/failure as int
 	 */
 	@Override
 	public int updateUsers(User user) {
@@ -119,7 +124,8 @@ public class UserDaoImpl implements UserDao {
 	 * Gets the User info by its id
 	 * 
 	 * @param user_id
-	 * @return
+	 *            user id
+	 * @return user object
 	 */
 	@Override
 	public User getUserById(int user_id) {
@@ -143,7 +149,7 @@ public class UserDaoImpl implements UserDao {
 	/**
 	 * Gets the last inserted user id
 	 * 
-	 * @return
+	 * @return user id
 	 */
 	@Override
 	public int getLastInsertedUserId() {
@@ -164,7 +170,8 @@ public class UserDaoImpl implements UserDao {
 	 * Gets user by its username
 	 * 
 	 * @param user
-	 * @return
+	 *            user object
+	 * @return user object
 	 */
 	@Override
 	public User getUserByUserName(User user) {
@@ -185,6 +192,12 @@ public class UserDaoImpl implements UserDao {
 		return userObj;
 	}
 
+	/**
+	 * Checks if table is empty
+	 * 
+	 * @return true: if table is empty else false
+	 */
+	@Override
 	public boolean checkIfTableEmpty() {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();

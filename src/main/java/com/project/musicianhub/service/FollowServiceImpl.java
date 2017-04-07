@@ -23,6 +23,7 @@ public class FollowServiceImpl implements FollowService {
 	 * Creates the follow for the user
 	 * 
 	 * @param follow
+	 *            follow object
 	 */
 	@Override
 	public void addFollow(Follow follow) {
@@ -57,6 +58,7 @@ public class FollowServiceImpl implements FollowService {
 	 * Gets the follow object by following user's id and follower's user id
 	 * 
 	 * @param follow
+	 *            follow object
 	 * @return follow object
 	 */
 	@Override
@@ -68,7 +70,9 @@ public class FollowServiceImpl implements FollowService {
 	 * Gets the follower user by user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @return followings list
 	 */
 	@Override

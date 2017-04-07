@@ -72,6 +72,7 @@ public class FollowResource {
 	 * Gets all the followers by user id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
 	 *            http servlet request
 	 * @return list of followers
@@ -86,6 +87,7 @@ public class FollowResource {
 	 * Gets all the followeing by user id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
 	 *            http servlet request
 	 * @return list of following users

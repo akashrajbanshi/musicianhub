@@ -21,6 +21,7 @@ public class LikeServiceImpl implements LikeService {
 	 * Creates the like for the music post
 	 * 
 	 * @param like
+	 *            like object
 	 * @return custom response
 	 */
 	@Override
@@ -63,7 +64,9 @@ public class LikeServiceImpl implements LikeService {
 	 * Updates the like using the music id and like object
 	 * 
 	 * @param id
+	 *            like id
 	 * @param like
+	 *            like object
 	 * @return
 	 */
 	@Override
@@ -76,7 +79,9 @@ public class LikeServiceImpl implements LikeService {
 	 * Get like by the user and music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @param user_id
+	 *            user id
 	 * @return like object
 	 */
 	@Override

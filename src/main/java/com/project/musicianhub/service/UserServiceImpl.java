@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
 	 * Create user
 	 * 
 	 * @param user
+	 *            user object
 	 * @return custom response
 	 */
 	@Override
@@ -77,8 +78,11 @@ public class UserServiceImpl implements UserService {
 	 * Saves the user with desired response to the client
 	 * 
 	 * @param user
+	 *            user object
 	 * @param response
+	 *            http servlet request
 	 * @param unencryptedPassword
+	 *            plain string password
 	 */
 	private void saveUserWithResponse(User user, Response response, String unencryptedPassword) {
 		User userObj = userDaoImpl.addUser(user);
@@ -108,7 +112,8 @@ public class UserServiceImpl implements UserService {
 	 * Delete all the users
 	 * 
 	 * @param id
-	 * @return
+	 *            user id
+	 * @return delete success/failure as int
 	 */
 	@Override
 	public int deleteUsers(int id) {
@@ -119,7 +124,9 @@ public class UserServiceImpl implements UserService {
 	 * Updates the user information
 	 * 
 	 * @param user
+	 *            user object
 	 * @param request
+	 *            http servlet request
 	 * @return custom response
 	 */
 	@Override
@@ -157,8 +164,11 @@ public class UserServiceImpl implements UserService {
 	 * Updates the user with a corresponding response
 	 * 
 	 * @param user
+	 *            user objet
 	 * @param response
+	 *            http servlet request
 	 * @param imagePath
+	 *            user image path for upload
 	 */
 	private void updateUserWithResponse(User user, Response response, String imagePath) {
 		// updates the user
@@ -183,6 +193,7 @@ public class UserServiceImpl implements UserService {
 	 * Get user object from user id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @return user object
 	 */
 	@Override
@@ -280,7 +291,9 @@ public class UserServiceImpl implements UserService {
 	 * Saves the file to the real path
 	 * 
 	 * @param inStream
+	 *            input stream
 	 * @param target
+	 *            file upload path
 	 */
 	private void saveToFile(InputStream inStream, String target) {
 		try {
@@ -302,6 +315,7 @@ public class UserServiceImpl implements UserService {
 	 * Creates the directory
 	 * 
 	 * @param dirName
+	 *            directory name
 	 */
 	private void createFolderIfNotExists(String dirName) {
 		File theDir = new File(dirName);
@@ -324,7 +338,9 @@ public class UserServiceImpl implements UserService {
 	 * Gets the user credentials
 	 * 
 	 * @param user
+	 *            user object
 	 * @param request
+	 *            http servlet request
 	 * @return custom response
 	 */
 	@Override

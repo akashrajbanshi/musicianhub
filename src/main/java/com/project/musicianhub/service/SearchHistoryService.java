@@ -20,6 +20,7 @@ public interface SearchHistoryService {
 	 * Creates the Search History for the user
 	 * 
 	 * @param searchHistory
+	 *            searchHistory object
 	 */
 	public void addSearchHistory(SearchHistory searchHistory);
 
@@ -27,8 +28,10 @@ public interface SearchHistoryService {
 	 * Gets all the search history by user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
-	 * @return
+	 *            http servlet request
+	 * @return music list
 	 */
 	public List<Music> getSearchHistoryByUser(int user_id, HttpServletRequest request);
 
@@ -36,6 +39,7 @@ public interface SearchHistoryService {
 	 * Clears the search history according to the user
 	 * 
 	 * @param user_id
+	 *            user id
 	 */
 
 	public void clearSearchHistory(int user_id);

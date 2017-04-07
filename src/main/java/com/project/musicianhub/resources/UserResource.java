@@ -44,8 +44,6 @@ public class UserResource {
 	/**
 	 * Gets the users list
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return user list
 	 */
 	@GET
@@ -56,8 +54,6 @@ public class UserResource {
 	/**
 	 * Gets user information by user's id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * 
 	 * @param user_id
 	 *            user's id
@@ -78,8 +74,6 @@ public class UserResource {
 	/**
 	 * Validates the user's credentials
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * 
 	 * @param user
 	 *            user's object
@@ -97,8 +91,6 @@ public class UserResource {
 	/**
 	 * Gets the URI for followers of the user
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param uriInfo
 	 *            gets the URI information object
 	 * @param user
@@ -116,8 +108,6 @@ public class UserResource {
 	/**
 	 * Gets the URI for followers of the self
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param uriInfo
 	 *            gets the URI information object
 	 * @param user
@@ -133,8 +123,6 @@ public class UserResource {
 	/**
 	 * Creates the user
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param user
 	 *            user's object
 	 * @param uriInfo
@@ -150,8 +138,6 @@ public class UserResource {
 	/**
 	 * Updates the user information
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param user
 	 *            user's object
 	 * @param request
@@ -167,8 +153,6 @@ public class UserResource {
 	/**
 	 * Deletes the user information
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param id
 	 *            user's id
 	 * @return jersey's Response object
@@ -186,8 +170,6 @@ public class UserResource {
 	/**
 	 * Upload user's image
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param multiPart
 	 *            user's upload information including image in multipart data
 	 * @param context
@@ -206,8 +188,6 @@ public class UserResource {
 	/**
 	 * Gets the follow resource for the user
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return FollowResource object
 	 */
 	@Path("/{user_id}/follow")
@@ -218,8 +198,6 @@ public class UserResource {
 	/**
 	 * Gets the search history resource
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return SearchHistoryResource object
 	 */
 	@Path("/{user_id}/searchHistory")
@@ -230,8 +208,6 @@ public class UserResource {
 	/**
 	 * Gets the notification user
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return NotificationResource object
 	 * 
 	 */

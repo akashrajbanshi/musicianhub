@@ -38,8 +38,10 @@ public class SearchHistoryResource {
 	 * Get all the search history for a user
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
-	 * @return
+	 *            http request
+	 * @return music list
 	 */
 	@GET
 	@Path("/allSearchHistory")
@@ -51,9 +53,12 @@ public class SearchHistoryResource {
 	 * creates search history for a user
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param searchHistory
+	 *            search history object
 	 * @param uriInfo
-	 * @return
+	 *            uri information of the current context
+	 * @return custom response
 	 */
 	@POST
 	@Path("/createSearchHistory")
@@ -72,8 +77,10 @@ public class SearchHistoryResource {
 	 * Deletes the search history
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param uriInfo
-	 * @return
+	 *            uri information of the current context
+	 * @return custom response
 	 */
 	@DELETE
 	@Path("/clearSearchHistory")

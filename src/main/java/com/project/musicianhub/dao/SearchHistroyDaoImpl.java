@@ -20,6 +20,7 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 	 * Adds the search history
 	 * 
 	 * @param searchHistory
+	 *            searchHistory object
 	 */
 
 	@Override
@@ -38,7 +39,9 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 	 * Adds the search history
 	 * 
 	 * @param session
+	 *            session object
 	 * @param searchHistory
+	 *            searchHistory object
 	 */
 	@Override
 	public void addSearchHistory(Session session, SearchHistory searchHistory) {
@@ -51,6 +54,7 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 	 * Gets the search history by the user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @return search history list
 	 */
 	@Override
@@ -70,6 +74,7 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 	 * Deletes the search history from the database of a particular user
 	 * 
 	 * @param user_id
+	 *            user id
 	 */
 	@Override
 	public void clearSearchHistory(int user_id) {

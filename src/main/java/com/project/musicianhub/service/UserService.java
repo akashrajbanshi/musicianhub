@@ -22,6 +22,7 @@ public interface UserService {
 	 * Create user
 	 * 
 	 * @param user
+	 *            user object
 	 * @return custom response
 	 */
 	public Response addUser(User user);
@@ -37,7 +38,8 @@ public interface UserService {
 	 * Delete all the users
 	 * 
 	 * @param id
-	 * @return
+	 *            user id
+	 * @return delete success/failure as int
 	 */
 	public int deleteUsers(int id);
 
@@ -45,7 +47,9 @@ public interface UserService {
 	 * Updates the user information
 	 * 
 	 * @param user
+	 *            user object
 	 * @param request
+	 *            http servlet request
 	 * @return custom response
 	 */
 	public Response updateUsers(User user, HttpServletRequest request);
@@ -54,6 +58,7 @@ public interface UserService {
 	 * Get user object from user id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @return user object
 	 */
 	public User getUserById(int user_id);
@@ -80,7 +85,9 @@ public interface UserService {
 	 * Gets the user credentials
 	 * 
 	 * @param user
+	 *            user object
 	 * @param request
+	 *            http servlet request
 	 * @return custom response
 	 */
 	public Response getUserCredentials(User user, HttpServletRequest request);

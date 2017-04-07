@@ -31,7 +31,9 @@ public class NotificationResource {
 	 * Creates the notification token for the user
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	@POST
 	@Path("/registerUserToken")
@@ -56,6 +58,7 @@ public class NotificationResource {
 	 * @param request
 	 *            http request
 	 * @throws IOException
+	 *             input out exception for sending notification
 	 */
 	@POST
 	@Path("sendNotification/{to_user_id}")
@@ -72,7 +75,7 @@ public class NotificationResource {
 	 * Gets all the notification for the user by its id
 	 * 
 	 * @param user_id
-	 * @return
+	 * @return notification response
 	 */
 	@GET
 	@Path("getAllNotification")

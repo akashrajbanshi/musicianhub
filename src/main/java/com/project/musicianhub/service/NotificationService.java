@@ -23,7 +23,9 @@ public interface NotificationService {
 	 * object and notification sender user object
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param notificationSenderUser
+	 *            user object
 	 */
 	public void addNotification(Notification notification, User notificationSenderUser);
 
@@ -32,7 +34,9 @@ public interface NotificationService {
 	 * sender user object
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param notificationSenderUser
+	 *            user object
 	 */
 	public void addNotificationFollow(Notification notification, User notificationSenderUser);
 
@@ -46,9 +50,10 @@ public interface NotificationService {
 	public NotificationResponse getAllNotificationForUser(int id);
 
 	/**
-	 * Creates teh user notification token for the current user
+	 * Creates the user notification token for the current user
 	 * 
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	public void addUserNotificationToken(NotificationToken notificationToken);
 
@@ -56,8 +61,11 @@ public interface NotificationService {
 	 * sends notification to the user
 	 * 
 	 * @param notification
+	 *            notification object
 	 * @param request
+	 *            http servlet request
 	 * @throws IOException
+	 *             input output exception
 	 */
 	public void sendNotification(Notification notification, HttpServletRequest request) throws IOException;
 

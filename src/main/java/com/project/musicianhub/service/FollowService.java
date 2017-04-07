@@ -19,6 +19,7 @@ public interface FollowService {
 	 * Creates the follow for the user
 	 * 
 	 * @param follow
+	 *            follow object
 	 */
 	public void addFollow(Follow follow);
 
@@ -26,7 +27,9 @@ public interface FollowService {
 	 * Gets the followers by user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @return followers list
 	 */
 	public List<Follow> getFollowersByUser(int user_id, HttpServletRequest request);
@@ -35,7 +38,9 @@ public interface FollowService {
 	 * Gets the following user by user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @return followings list
 	 */
 	public List<Follow> getFollowingByUser(int user_id, HttpServletRequest request);
@@ -44,6 +49,7 @@ public interface FollowService {
 	 * Gets the follow object by following user's id and follower's user id
 	 * 
 	 * @param follow
+	 *            follow object
 	 * @return follow object
 	 */
 	public Follow getFollowByFollowingAndFollowerId(Follow follow);

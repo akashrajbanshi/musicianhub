@@ -19,6 +19,7 @@ public interface MusicDao {
 	 * Adds music to the database
 	 * 
 	 * @param music
+	 *            music object
 	 * @return music object
 	 */
 	public Music addMusic(Music music);
@@ -27,7 +28,9 @@ public interface MusicDao {
 	 * Adds music to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param music
+	 *            music object
 	 */
 	public void addMusic(Session session, Music music);
 
@@ -55,7 +58,8 @@ public interface MusicDao {
 	 * Deletes the music by id
 	 * 
 	 * @param id
-	 * @return
+	 *            music id
+	 * @return delete success/failure as int
 	 */
 	public int deleteMusic(int id);
 
@@ -63,7 +67,8 @@ public interface MusicDao {
 	 * Updates the music by music object
 	 * 
 	 * @param music
-	 * @return
+	 *            music object
+	 * @return update success/failure as int
 	 */
 	public int updateMusic(Music music);
 
@@ -71,6 +76,7 @@ public interface MusicDao {
 	 * Gets the music by id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @return music object
 	 */
 	public Music getMusicbyId(int music_id);
@@ -86,6 +92,7 @@ public interface MusicDao {
 	 * Searches for the music by the search text provided
 	 * 
 	 * @param searchText
+	 *            text used by user for a search
 	 * @return list of music
 	 */
 	public List<Music> searchMusic(String searchText);

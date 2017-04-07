@@ -1,6 +1,5 @@
 package com.project.musicianhub.dao;
 
-
 import java.util.List;
 
 import org.hibernate.Session;
@@ -22,14 +21,17 @@ public interface NotificationDao {
 	 * Adds the unique notification token to the database
 	 * 
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	public void addUserNotificationToken(NotificationToken notificationToken);
 
 	/**
-	 * Adds the uniques notification token to the database
+	 * Adds the unique notification token to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	public void addUserNotificationToken(Session session, NotificationToken notificationToken);
 
@@ -37,6 +39,7 @@ public interface NotificationDao {
 	 * Adds notification to the database
 	 * 
 	 * @param notification
+	 *            notification object
 	 */
 	public void addNotification(Notification notification);
 
@@ -44,7 +47,9 @@ public interface NotificationDao {
 	 * Adds notification to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param notification
+	 *            notification object
 	 */
 	public void addNotification(Session session, Notification notification);
 
@@ -52,6 +57,7 @@ public interface NotificationDao {
 	 * Adds follow notification to the database
 	 * 
 	 * @param notificationFollow
+	 *            notificationFollow object
 	 */
 	public void addNotificationFollow(NotificationFollow notificationFollow);
 
@@ -59,7 +65,9 @@ public interface NotificationDao {
 	 * Adds follow notification to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param notificationFollow
+	 *            notificationFollow object
 	 */
 	public void addNotificationFollow(Session session, NotificationFollow notificationFollow);
 
@@ -76,6 +84,7 @@ public interface NotificationDao {
 	 * Updates the unique notification token
 	 * 
 	 * @param notificationToken
+	 *            notificationToken object
 	 */
 	public void updateUserNotificationToken(NotificationToken notificationToken);
 
@@ -113,11 +122,17 @@ public interface NotificationDao {
 	public Notification getAllNotificationByFromAndToUser(int musicId, int fromId, int toId, String type);
 
 	/**
-	 * Gets the follow notification by using from and to user's id
+	 * Gets the notification from the database using from and to user's id
 	 * 
+	 * @param musicId
+	 *            music's id
 	 * @param fromId
+	 *            notification from user's id
 	 * @param toId
-	 * @return notification follow
+	 *            notification to user's id
+	 * @param type
+	 *            type of the notification
+	 * @return notification object
 	 */
 	public NotificationFollow getAllNotificationByFromAndToUser(int fromId, int toId);
 

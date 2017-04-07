@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.Comment;
 
-
 /**
  * Dao implementation for the comments
  * 
@@ -22,6 +21,7 @@ public class CommentDaoImpl implements CommentDao {
 	 * Adds comments to the database
 	 * 
 	 * @param comment
+	 *            comment object
 	 * @return comment object
 	 */
 	@Override
@@ -40,9 +40,9 @@ public class CommentDaoImpl implements CommentDao {
 	 * Adds comments to the database
 	 * 
 	 * @param session
-	 *            params
+	 *            session object
 	 * @param comment
-	 *            parameter
+	 *            comment object
 	 */
 	@Override
 	public void addComment(Session session, Comment comment) {
@@ -54,6 +54,7 @@ public class CommentDaoImpl implements CommentDao {
 	 * Gets the music's comments from the music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @return comment's list
 	 */
 	@Override

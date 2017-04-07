@@ -32,8 +32,6 @@ public class CommentResource {
 	/**
 	 * Gets all the comment for the music by music id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @param request
@@ -49,8 +47,6 @@ public class CommentResource {
 	/**
 	 * Create the comment for the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @param comment

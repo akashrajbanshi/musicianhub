@@ -34,8 +34,6 @@ public class LikeResource {
 	/**
 	 * Gets the like list by music id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @return user list
@@ -49,8 +47,6 @@ public class LikeResource {
 	/**
 	 * Gets the like list by music id and user id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @return user list
@@ -64,8 +60,6 @@ public class LikeResource {
 	/**
 	 * create the like for the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @param like
@@ -86,8 +80,6 @@ public class LikeResource {
 	/**
 	 * Update the like of the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param id
 	 *            music's id
 	 * @param like

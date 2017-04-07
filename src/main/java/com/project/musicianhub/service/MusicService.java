@@ -23,6 +23,7 @@ public interface MusicService {
 	 * Creates the music
 	 * 
 	 * @param music
+	 *            music object
 	 * @return custom response
 	 */
 	public Response addMusic(Music music);
@@ -30,7 +31,7 @@ public interface MusicService {
 	/**
 	 * Gets all the music available
 	 * 
-	 * @return
+	 * @return music list
 	 */
 	public List<Music> getMusic();
 
@@ -38,7 +39,9 @@ public interface MusicService {
 	 * Gets the music according to the user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @param firstResult
 	 *            start fetching data from this point
 	 * @param isMaximumResultSet
@@ -61,6 +64,7 @@ public interface MusicService {
 	 * Updates the music by music object
 	 * 
 	 * @param music
+	 *            music object
 	 * @return custom response
 	 */
 	public Response updateMusic(Music music);
@@ -69,6 +73,7 @@ public interface MusicService {
 	 * Get Music by music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @param request
 	 *            http request
 	 * @return music object

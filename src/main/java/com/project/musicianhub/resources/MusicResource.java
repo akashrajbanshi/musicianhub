@@ -37,8 +37,6 @@ public class MusicResource {
 	/**
 	 * Gets the music list
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return user list
 	 */
 	@GET
@@ -49,8 +47,6 @@ public class MusicResource {
 	/**
 	 * Gets music information by music's id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music_id
 	 *            music's id
 	 * @return music object
@@ -67,10 +63,14 @@ public class MusicResource {
 	 * Gets the music from the following user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @param firstResult
+	 *            the start point of the data fetch
 	 * @param music
-	 * @return
+	 *            music object
+	 * @return music object
 	 */
 	@POST
 	@Path("followingMusic/{user_id}/{firstResult}")
@@ -83,8 +83,6 @@ public class MusicResource {
 	/**
 	 * Gets the user's music by user's id
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param user_id
 	 *            user's id
 	 * @param request
@@ -101,8 +99,6 @@ public class MusicResource {
 	/**
 	 * Creates the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music
 	 *            music's object
 	 * @param uriInfo
@@ -118,8 +114,6 @@ public class MusicResource {
 	/**
 	 * Uploads the album art of the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param multiPart
 	 *            music's upload information including image in multipart data
 	 * @param context
@@ -138,8 +132,6 @@ public class MusicResource {
 	/**
 	 * Uploads the album art of the music post
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param multiPart
 	 *            music's upload information including image in multipart data
 	 * @param context
@@ -158,8 +150,6 @@ public class MusicResource {
 	/**
 	 * Updates the music information
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param music
 	 *            music's object
 	 * @return custom Response object
@@ -173,8 +163,6 @@ public class MusicResource {
 	/**
 	 * Deletes the music information
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param id
 	 *            music's id
 	 * @return jersey's Response object
@@ -188,8 +176,6 @@ public class MusicResource {
 	/**
 	 * Search the music
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @param searchText
 	 *            search for the music
 	 * @param request
@@ -204,8 +190,6 @@ public class MusicResource {
 	/**
 	 * Gets the comments resource
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return CommentResource object
 	 */
 	@Path("{music_id}/comments")
@@ -216,8 +200,6 @@ public class MusicResource {
 	/**
 	 * Gets the LikeResource resource
 	 * 
-	 * @author Akash Rajbanshi
-	 * @since 1.0
 	 * @return LikeResource object
 	 */
 	@Path("{music_id}/likes")

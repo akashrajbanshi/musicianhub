@@ -46,6 +46,7 @@ public class MusicServiceImpl implements MusicService {
 	 * Creates the music
 	 * 
 	 * @param music
+	 *            music object
 	 * @return custom response
 	 */
 	@Override
@@ -70,7 +71,7 @@ public class MusicServiceImpl implements MusicService {
 	/**
 	 * Gets all the music available
 	 * 
-	 * @return
+	 * @return music list
 	 */
 	@Override
 	public List<Music> getMusic() {
@@ -81,7 +82,9 @@ public class MusicServiceImpl implements MusicService {
 	 * Gets the music according to the user's id
 	 * 
 	 * @param user_id
+	 *            user id
 	 * @param request
+	 *            http servlet request
 	 * @param firstResult
 	 *            start fetching data from this point
 	 * @param isMaximumResultSet
@@ -127,6 +130,7 @@ public class MusicServiceImpl implements MusicService {
 	 * Get Music by music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @param request
 	 *            http request
 	 * @return music object
@@ -188,6 +192,7 @@ public class MusicServiceImpl implements MusicService {
 	 * Updates the music by music object
 	 * 
 	 * @param music
+	 *            music object
 	 * @return custom response
 	 */
 	@Override
@@ -410,7 +415,9 @@ public class MusicServiceImpl implements MusicService {
 	 * Saves the file to the file path which is physical
 	 * 
 	 * @param inStream
+	 *            input stream data
 	 * @param target
+	 *            file path to upload file
 	 */
 	private void saveToFile(InputStream inStream, String target) {
 		try {
@@ -535,6 +542,7 @@ public class MusicServiceImpl implements MusicService {
 	 * list
 	 * 
 	 * @param finalMusicList
+	 *            music list
 	 */
 	private void sortMusicListByDate(List<Music> finalMusicList) {
 		Collections.sort(finalMusicList, new Comparator<Music>() {

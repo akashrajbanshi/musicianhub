@@ -23,7 +23,8 @@ public class CommentServiceImpl implements CommentService {
 	 * Creates the comment using the comment object
 	 * 
 	 * @param comment
-	 * @return
+	 *            comment object
+	 * @return comment object
 	 */
 	@Override
 	public Comment addComment(Comment comment) {
@@ -35,6 +36,7 @@ public class CommentServiceImpl implements CommentService {
 	 * Gets the comment list by the music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @param request
 	 *            http request
 	 * @return comment list

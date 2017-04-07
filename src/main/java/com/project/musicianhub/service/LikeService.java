@@ -18,6 +18,7 @@ public interface LikeService {
 	 * Creates the like for the music post
 	 * 
 	 * @param like
+	 *            like object
 	 * @return custom response
 	 */
 	public Response addLike(Like like);
@@ -34,7 +35,9 @@ public interface LikeService {
 	 * Updates the like using the music id and like object
 	 * 
 	 * @param id
+	 *            like id
 	 * @param like
+	 *            like object
 	 * @return
 	 */
 	public int updateLike(int id, Like like);
@@ -43,7 +46,9 @@ public interface LikeService {
 	 * Get like by the user and music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @param user_id
+	 *            user id
 	 * @return like object
 	 */
 	public Like getLikeByUser(int music_id, int user_id);
