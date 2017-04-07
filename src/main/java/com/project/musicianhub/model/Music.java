@@ -11,11 +11,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.mysql.fabric.xmlrpc.base.Array;
-
+/**
+ * Model class for Music
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Entity
+@Table(name = "music")
 public class Music {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +48,8 @@ public class Music {
 	List<Like> likes = new ArrayList<>();
 	@Transient
 	private List<Comment> comments = new ArrayList<>();
-	
+	@Transient
+	private List<Music> musics = new ArrayList<>();
 
 	public Music() {
 		super();
@@ -61,8 +69,6 @@ public class Music {
 		this.music_path = music_path;
 		this.deleted = deleted;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -144,6 +150,12 @@ public class Music {
 		this.comments = comments;
 	}
 
-	
+	public List<Music> getMusics() {
+		return musics;
+	}
+
+	public void setMusics(List<Music> musics) {
+		this.musics = musics;
+	}
 
 }

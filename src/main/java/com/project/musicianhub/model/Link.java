@@ -1,5 +1,12 @@
 package com.project.musicianhub.model;
 
+/**
+ * Model class for Link
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class Link {
 
 	private String link;

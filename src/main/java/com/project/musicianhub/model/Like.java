@@ -9,6 +9,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Model class for Like
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Entity
 @Table(name = "post_like")
 public class Like {

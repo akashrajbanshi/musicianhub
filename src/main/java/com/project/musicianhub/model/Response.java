@@ -2,6 +2,13 @@ package com.project.musicianhub.model;
 
 import java.util.List;
 
+/**
+ * Model class for Response
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class Response {
 	private int id;
 	private String code;

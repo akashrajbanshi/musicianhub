@@ -1,5 +1,12 @@
 package com.project.musicianhub.model;
 
+/**
+ * Model class for Error Message
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class ErrorMessage {
 
 	private String errorMessage;

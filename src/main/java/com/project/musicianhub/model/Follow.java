@@ -7,8 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+/**
+ * Model class for Follow
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Entity
+@Table(name = "follow")
 public class Follow {
 
 	@Id

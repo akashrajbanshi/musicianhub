@@ -8,6 +8,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Model class for Search History
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Entity
 @Table(name = "search_history")
 public class SearchHistory {

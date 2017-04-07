@@ -7,8 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+/**
+ * Model class for Comment
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Entity
+@Table(name = "comment")
 public class Comment {
 
 	@Id
