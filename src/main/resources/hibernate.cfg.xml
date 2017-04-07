@@ -5,6 +5,7 @@
 	<session-factory name="hibernateSessionFactory">
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.password"></property>
+		<!-- <property name="hibernate.connection.password">musicianhub</property> -->
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/musicianhub</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -17,5 +18,8 @@
 		<mapping class="com.project.musicianhub.model.Like" />
 		<mapping class="com.project.musicianhub.model.Follow" />
 		<mapping class="com.project.musicianhub.model.SearchHistory" />
+		<mapping class="com.project.musicianhub.model.Notification" />
+		<mapping class="com.project.musicianhub.model.NotificationToken" />
+		<mapping class="com.project.musicianhub.model.NotificationFollow" />
 	</session-factory>
 </hibernate-configuration>
