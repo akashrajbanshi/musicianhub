@@ -9,25 +9,49 @@ import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.User;
 
+/**
+ * Dao implementation for User
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class UserDaoImpl implements UserDao {
 
+	/**
+	 * Adds user to the database
+	 * 
+	 * @param user
+	 * @return
+	 */
 	@Override
 	public User addUser(User user) {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		addUser(session, user);
-		
+
 		tx.commit();
-		
+
 		session.close();
 		return user;
 	}
 
+	/**
+	 * Adds user to the database
+	 * 
+	 * @param session
+	 * @param user
+	 */
 	@Override
 	public void addUser(Session session, User user) {
 		session.save(user);
 	}
 
+	/**
+	 * Gets all the user
+	 * 
+	 * @return
+	 */
 	@Override
 	public List<User> getUsers() {
 		Session session = SessionUtil.getSession();
@@ -39,6 +63,12 @@ public class UserDaoImpl implements UserDao {
 		return users;
 	}
 
+	/**
+	 * Deletes the user by id
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@Override
 	public int deleteUsers(int id) {
 		Session session = SessionUtil.getSession();
@@ -52,10 +82,16 @@ public class UserDaoImpl implements UserDao {
 		tx.commit();
 
 		session.close();
-		
+
 		return rowCount;
 	}
 
+	/**
+	 * Updates the user
+	 * 
+	 * @param user
+	 * @return
+	 */
 	@Override
 	public int updateUsers(User user) {
 		if (user.getId() <= 0)
@@ -73,20 +109,25 @@ public class UserDaoImpl implements UserDao {
 		query.setLong("phone_no", user.getPhone_no());
 		int rowCount = query.executeUpdate();
 		System.out.println("Rows affected: " + rowCount);
-		
+
 		tx.commit();
-		
+
 		session.close();
 		return rowCount;
 	}
 
+	/**
+	 * Gets the User info by its id
+	 * 
+	 * @param user_id
+	 * @return
+	 */
 	@Override
 	public User getUserById(int user_id) {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		Query query = session.createQuery("from User where id = :id");
 		query.setInteger("id", user_id);
-		
 		List<User> users = query.list();
 		if (users.size() == 0) {
 			User user = new User();
@@ -94,12 +135,17 @@ public class UserDaoImpl implements UserDao {
 			users.add(user);
 		}
 		User user = users.get(0);
-		
+
 		tx.commit();
 		session.close();
 		return user;
 	}
 
+	/**
+	 * Gets the last inserted user id
+	 * 
+	 * @return
+	 */
 	@Override
 	public int getLastInsertedUserId() {
 		Session session = SessionUtil.getSession();
@@ -115,6 +161,12 @@ public class UserDaoImpl implements UserDao {
 		return lastId;
 	}
 
+	/**
+	 * Gets user by its username
+	 * 
+	 * @param user
+	 * @return
+	 */
 	@Override
 	public User getUserByUserName(User user) {
 		Session session = SessionUtil.getSession();
@@ -122,7 +174,6 @@ public class UserDaoImpl implements UserDao {
 		Query query = session.createQuery("from User where username = :username");
 		query.setString("username", user.getUsername());
 		List<User> users = query.list();
-		
 		if (users.size() == 0) {
 			User userObj = new User();
 			userObj = null;
@@ -130,7 +181,7 @@ public class UserDaoImpl implements UserDao {
 		}
 		User userObj = users.get(0);
 		tx.commit();
-		
+
 		session.close();
 		return userObj;
 	}
@@ -139,7 +190,7 @@ public class UserDaoImpl implements UserDao {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		Query query = session.createQuery("from User");
-	
+
 		List<User> users = query.list();
 		tx.commit();
 		session.close();

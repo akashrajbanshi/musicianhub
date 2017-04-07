@@ -9,8 +9,20 @@ import org.hibernate.Transaction;
 import com.project.musicianhub.model.Follow;
 import com.project.musicianhub.model.Music;
 
+/**
+ * Dao implementation for follow
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class FollowDaoImpl implements FollowDao {
 
+	/**
+	 * Adds follow to the database
+	 * 
+	 * @param follow
+	 */
 	@Override
 	public void addFollow(Follow follow) {
 		Session session = SessionUtil.getSession();
@@ -23,12 +35,24 @@ public class FollowDaoImpl implements FollowDao {
 
 	}
 
+	/**
+	 * Adds follow to the database
+	 * 
+	 * @param session
+	 * @param follow
+	 */
 	@Override
 	public void addFollow(Session session, Follow follow) {
 
 		session.save(follow);
 	}
 
+	/**
+	 * Gets follower list by user id
+	 * 
+	 * @param user_id
+	 * @return followers list
+	 */
 	@Override
 	public List<Follow> getFollowersByUser(int user_id) {
 		Session session = SessionUtil.getSession();
@@ -43,6 +67,12 @@ public class FollowDaoImpl implements FollowDao {
 		return followList;
 	}
 
+	/**
+	 * Gets following list by user id
+	 * 
+	 * @param user_id
+	 * @return following list
+	 */
 	@Override
 	public List<Follow> getFollowingByUser(int user_id) {
 		Session session = SessionUtil.getSession();
@@ -57,6 +87,13 @@ public class FollowDaoImpl implements FollowDao {
 		return followingList;
 	}
 
+	/**
+	 * Gets the follow data by the follower and following user id
+	 * 
+	 * @param follow
+	 * @return follow object
+	 */
+	@Override
 	public Follow getFollowByFollowingAndFollowerId(Follow follow) {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -79,6 +116,12 @@ public class FollowDaoImpl implements FollowDao {
 		return followOb;
 	}
 
+	/**
+	 * Updates the follow
+	 * 
+	 * @param follow
+	 */
+	@Override
 	public void updateFollow(Follow follow) {
 
 		Session session = SessionUtil.getSession();

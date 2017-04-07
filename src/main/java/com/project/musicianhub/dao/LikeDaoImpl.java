@@ -8,9 +8,20 @@ import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.Like;
 import com.project.musicianhub.model.Music;
-
+/**
+ * Dao implementation for Like
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class LikeDaoImpl implements LikeDao {
 
+	/**
+	 * Adds the like to the database
+	 * 
+	 * @param like
+	 */
 	@Override
 	public void addLike(Like like) {
 		Session session = SessionUtil.getSession();
@@ -23,11 +34,24 @@ public class LikeDaoImpl implements LikeDao {
 
 	}
 
+	/**
+	 * Adds the like to the database
+	 * 
+	 * @param session
+	 * @param like
+	 */
+
 	@Override
 	public void addLike(Session session, Like like) {
 		session.save(like);
 	}
 
+	/**
+	 * Gets all the likes available for the music
+	 * 
+	 * @param music_id
+	 * @return music's like list
+	 */
 	@Override
 	public List<Like> getLikebyMusic(int music_id) {
 		Session session = SessionUtil.getSession();
@@ -40,6 +64,14 @@ public class LikeDaoImpl implements LikeDao {
 		return likes;
 	}
 
+	/**
+	 * Updates the existing like from the database of a particular like object
+	 * by id
+	 * 
+	 * @param id
+	 * @param like
+	 * @return
+	 */
 	@Override
 	public int updateLike(int id, Like like) {
 		if (id <= 0)

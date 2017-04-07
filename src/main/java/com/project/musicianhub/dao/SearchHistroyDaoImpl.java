@@ -8,7 +8,19 @@ import org.hibernate.Transaction;
 
 import com.project.musicianhub.model.SearchHistory;
 
+/**
+ * Dao implementation for Search History
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class SearchHistroyDaoImpl implements SearchHistoryDao {
+	/**
+	 * Adds the search history
+	 * 
+	 * @param searchHistory
+	 */
 
 	@Override
 	public void addSearchHistory(SearchHistory searchHistory) {
@@ -22,6 +34,12 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 
 	}
 
+	/**
+	 * Adds the search history
+	 * 
+	 * @param session
+	 * @param searchHistory
+	 */
 	@Override
 	public void addSearchHistory(Session session, SearchHistory searchHistory) {
 
@@ -29,6 +47,12 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 
 	}
 
+	/**
+	 * Gets the search history by the user's id
+	 * 
+	 * @param user_id
+	 * @return search history list
+	 */
 	@Override
 	public List<SearchHistory> getSearchHistoryByUser(int user_id) {
 		Session session = SessionUtil.getSession();
@@ -42,6 +66,11 @@ public class SearchHistroyDaoImpl implements SearchHistoryDao {
 
 	}
 
+	/**
+	 * Deletes the search history from the database of a particular user
+	 * 
+	 * @param user_id
+	 */
 	@Override
 	public void clearSearchHistory(int user_id) {
 		Session session = SessionUtil.getSession();

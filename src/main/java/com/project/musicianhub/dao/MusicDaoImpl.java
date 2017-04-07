@@ -11,8 +11,21 @@ import org.hibernate.Transaction;
 import com.project.musicianhub.model.Music;
 import com.project.musicianhub.model.User;
 
+/**
+ * Dao implementation for Music
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 public class MusicDaoImpl implements MusicDao {
 
+	/**
+	 * Adds music to the database
+	 * 
+	 * @param music
+	 * @return music object
+	 */
 	@Override
 	public Music addMusic(Music music) {
 		Session session = SessionUtil.getSession();
@@ -25,6 +38,12 @@ public class MusicDaoImpl implements MusicDao {
 		return music;
 	}
 
+	/**
+	 * Adds music to the database
+	 * 
+	 * @param session
+	 * @param music
+	 */
 	@Override
 	public void addMusic(Session session, Music music) {
 
@@ -33,6 +52,12 @@ public class MusicDaoImpl implements MusicDao {
 		session.save(music);
 
 	}
+
+	/**
+	 * Gets all the music list from the database
+	 * 
+	 * @return music list
+	 */
 
 	@Override
 	public List<Music> getMusic() {
@@ -43,22 +68,30 @@ public class MusicDaoImpl implements MusicDao {
 		return musicList;
 	}
 
+	/**
+	 * Gets music by user id
+	 * 
+	 * @param user_id
+	 *            user's id
+	 * @param firstResult
+	 *            the value which defines from where the data is to extracted
+	 * @param isMaximumResultSet
+	 *            total number of data to be loaded
+	 * @return music list
+	 */
 	@Override
-	public List<Music> getMusicbyUser(int user_id) {
+	public List<Music> getMusicbyUser(int user_id, int firstResult, boolean isMaximumResultSet) {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
-		// String sql = "SELECT user.id user_id,user.username,user.name,music.id
-		// as music_id, music.title, music.genre, music.published_date,
-		// music.album_art_path, music.music_path from User user,Music music
-		// WHERE music.user_id=user.id and music.user_id= :user_id";
-		Query query = session.createQuery("from Music where user_id = :user_id and deleted = :deleted");
+		Query query = session
+				.createQuery("from Music where user_id = :user_id and deleted = :deleted ORDER BY id DESC");
 		query.setInteger("user_id", user_id);
 		query.setBoolean("deleted", false);
-		/*
-		 * Query query = session.createSQLQuery(sql);
-		 * query.setParameter("user_id", user_id);
-		 * query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-		 */
+
+		query.setFirstResult(firstResult);
+		if (isMaximumResultSet) {
+			query.setMaxResults(1);
+		}
 		List<Music> musicList = query.list();
 		tx.commit();
 
@@ -66,6 +99,12 @@ public class MusicDaoImpl implements MusicDao {
 		return musicList;
 	}
 
+	/**
+	 * Gets the music by id
+	 * 
+	 * @param music_id
+	 * @return music object
+	 */
 	@Override
 	public Music getMusicbyId(int music_id) {
 		Session session = SessionUtil.getSession();
@@ -80,6 +119,13 @@ public class MusicDaoImpl implements MusicDao {
 		}
 		return music.get(0);
 	}
+
+	/**
+	 * Deletes the music by id
+	 * 
+	 * @param id
+	 * @return
+	 */
 
 	@Override
 	public int deleteMusic(int id) {
@@ -97,6 +143,13 @@ public class MusicDaoImpl implements MusicDao {
 		session.close();
 		return rowCount;
 	}
+
+	/**
+	 * Updates the music by music object
+	 * 
+	 * @param music
+	 * @return
+	 */
 
 	@Override
 	public int updateMusic(Music music) {
@@ -136,6 +189,12 @@ public class MusicDaoImpl implements MusicDao {
 		return rowCount;
 	}
 
+	/**
+	 * Gets the Id of the last inserted music Id
+	 * 
+	 * @return music id
+	 */
+
 	@Override
 	public int getLastInsertedMusicId() {
 		Session session = SessionUtil.getSession();
@@ -152,11 +211,20 @@ public class MusicDaoImpl implements MusicDao {
 		return lastId;
 	}
 
+	/**
+	 * Searches for the music by the search text provided
+	 * 
+	 * @param searchText
+	 * @return list of music
+	 */
+
 	@Override
 	public List<Music> searchMusic(String searchText) {
 		Session session = SessionUtil.getSession();
 		Transaction tx = session.beginTransaction();
-		Query query = session.createQuery("from Music where (title LIKE :title or genre LIKE :genre) and deleted = :deleted");
+
+		Query query = session
+				.createQuery("from Music where (title LIKE :title or genre LIKE :genre) and deleted = :deleted");
 		query.setString("title", "%" + searchText + "%");
 		query.setString("genre", "%" + searchText + "%");
 		query.setBoolean("deleted", false);
