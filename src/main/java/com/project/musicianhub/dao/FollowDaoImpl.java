@@ -21,6 +21,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * Adds follow to the database
 	 * 
 	 * @param follow
+	 *            follow object
 	 */
 	@Override
 	public void addFollow(Follow follow) {
@@ -38,7 +39,9 @@ public class FollowDaoImpl implements FollowDao {
 	 * Adds follow to the database
 	 * 
 	 * @param session
+	 *            session object
 	 * @param follow
+	 *            follow object
 	 */
 	@Override
 	public void addFollow(Session session, Follow follow) {
@@ -50,6 +53,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * Gets follower list by user id
 	 * 
 	 * @param user_id
+	 *            user's id
 	 * @return followers list
 	 */
 	@Override
@@ -70,6 +74,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * Gets following list by user id
 	 * 
 	 * @param user_id
+	 *            user's id
 	 * @return following list
 	 */
 	@Override
@@ -90,6 +95,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * Gets the follow data by the follower and following user id
 	 * 
 	 * @param follow
+	 *            follow object
 	 * @return follow object
 	 */
 	@Override
@@ -119,6 +125,7 @@ public class FollowDaoImpl implements FollowDao {
 	 * Updates the follow
 	 * 
 	 * @param follow
+	 *            follow object
 	 */
 	@Override
 	public void updateFollow(Follow follow) {
