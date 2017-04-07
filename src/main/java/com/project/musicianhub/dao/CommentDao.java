@@ -19,6 +19,7 @@ public interface CommentDao {
 	 * Adds comments to the database
 	 * 
 	 * @param comment
+	 *            comment object
 	 * @return comment object
 	 */
 	public Comment addComment(Comment comment);
@@ -27,9 +28,9 @@ public interface CommentDao {
 	 * Adds comments to the database
 	 * 
 	 * @param session
-	 *            params
+	 *            session object
 	 * @param comment
-	 *            parameter
+	 *            comment object
 	 */
 	public void addComment(Session session, Comment comment);
 
@@ -37,6 +38,7 @@ public interface CommentDao {
 	 * Gets the music's comments from the music id
 	 * 
 	 * @param music_id
+	 *            music id
 	 * @return comment's list
 	 */
 	public List<Comment> getCommentByMusic(int music_id);
