@@ -34,7 +34,7 @@ public class MusicResourceTest {
 		response.setMessage("Music Updated Successfully!");
 		when(mockedMusicResource.getMusic()).thenReturn(Arrays.asList(music1, music2));
 		when(mockedMusicResource.getMusicById(1,null)).thenReturn(music1);
-		when(mockedMusicResource.getMusicByUser(music1.getUser().getId(), null))
+		when(mockedMusicResource.getMusicByUser(music1.getUser().getId(), null, 0))
 				.thenReturn(Arrays.asList(music1, music2));
 		when(mockedMusicResource.addMusic(music1, null)).thenReturn(response);
 		when(mockedMusicResource.updateMusic(music1)).thenReturn(response);
@@ -68,7 +68,7 @@ public class MusicResourceTest {
 
 	@Test
 	public void testGetMusicByUser() {
-		List<Music> musics = mockedMusicResource.getMusicByUser(music1.getUser().getId(), null);
+		List<Music> musics = mockedMusicResource.getMusicByUser(music1.getUser().getId(), null, 0);
 
 		Music music = musics.get(0);
 		assertEquals(1, music.getId());
