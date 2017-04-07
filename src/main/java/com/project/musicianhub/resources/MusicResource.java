@@ -62,12 +62,12 @@ public class MusicResource {
 		return musicServiceImpl.getMusicbyId(music_id, request);
 
 	}
-	
-	
-	@GET
-	@Path("followingMusic/{user_id}")
-	public List<Music> getMusicByFollowingUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request) {
-		return musicServiceImpl.getMusicByFollowingUser(user_id, request);
+
+	@POST
+	@Path("followingMusic/{user_id}/{firstResult}")
+	public Music getMusicByFollowingUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request,
+			@PathParam("firstResult") int firstResult, Music music) {
+		return musicServiceImpl.getMusicByFollowingUser(user_id, request, firstResult, music);
 
 	}
 
@@ -82,10 +82,11 @@ public class MusicResource {
 	 *            gets current request parameters such as server name and port
 	 * @return music list
 	 */
-	@GET
-	@Path("/usermusic/{user_id}")
-	public List<Music> getMusicByUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request) {
-		return musicServiceImpl.getMusicbyUser(user_id, request);
+
+	@Path("/usermusic/{user_id}/{firstResult}")
+	public List<Music> getMusicByUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request,
+			@PathParam("firstResult") int firstResult) {
+		return musicServiceImpl.getMusicbyUser(user_id, request, firstResult, false);
 	}
 
 	/**
@@ -121,7 +122,7 @@ public class MusicResource {
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String uploadImageFile(MultiPart multiPart, @Context ServletContext context) {
-		String imagePath = musicServiceImpl.uploadUserImage(multiPart, context);
+		String imagePath = musicServiceImpl.uploadAlbumImage(multiPart, context);
 		return imagePath;
 	}
 

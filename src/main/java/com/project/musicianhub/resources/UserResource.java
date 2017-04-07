@@ -227,4 +227,17 @@ public class UserResource {
 		return new SearchHistoryResource();
 	}
 
+	/**
+	 * Gets the notification user
+	 * 
+	 * @author Akash Rajbanshi
+	 * @since 1.0
+	 * @return NotificationResource object
+	 * 
+	 */
+	@Path("{user_id}/notification")
+	public NotificationResource getNoficationResource() {
+		return new NotificationResource();
+	}
+
 }
