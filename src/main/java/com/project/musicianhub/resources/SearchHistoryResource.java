@@ -20,6 +20,13 @@ import com.project.musicianhub.model.Music;
 import com.project.musicianhub.model.SearchHistory;
 import com.project.musicianhub.service.SearchHistoryServiceImpl;
 
+/**
+ * Resource class for Search History
+ * 
+ * @author Akash Rajbanshi
+ * @since 1.0
+ *
+ */
 @Path("/")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -27,12 +34,27 @@ public class SearchHistoryResource {
 
 	SearchHistoryServiceImpl searchHistoryServiceImpl = new SearchHistoryServiceImpl();
 
+	/**
+	 * Get all the search history for a user
+	 * 
+	 * @param user_id
+	 * @param request
+	 * @return
+	 */
 	@GET
 	@Path("/allSearchHistory")
 	public List<Music> getSearchHistoryByUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request) {
 		return searchHistoryServiceImpl.getSearchHistoryByUser(user_id, request);
 	}
 
+	/**
+	 * creates search history for a user
+	 * 
+	 * @param user_id
+	 * @param searchHistory
+	 * @param uriInfo
+	 * @return
+	 */
 	@POST
 	@Path("/createSearchHistory")
 	public Response addSearchHistory(@PathParam("user_id") int user_id, SearchHistory searchHistory,
@@ -46,6 +68,13 @@ public class SearchHistoryResource {
 		return Response.created(absolutePath).build();
 	}
 
+	/**
+	 * Deletes the search history
+	 * 
+	 * @param user_id
+	 * @param uriInfo
+	 * @return
+	 */
 	@DELETE
 	@Path("/clearSearchHistory")
 	public Response clearSearchHistory(@PathParam("user_id") int user_id, @Context UriInfo uriInfo) {

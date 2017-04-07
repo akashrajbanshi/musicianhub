@@ -63,6 +63,15 @@ public class MusicResource {
 
 	}
 
+	/**
+	 * Gets the music from the following user's id
+	 * 
+	 * @param user_id
+	 * @param request
+	 * @param firstResult
+	 * @param music
+	 * @return
+	 */
 	@POST
 	@Path("followingMusic/{user_id}/{firstResult}")
 	public Music getMusicByFollowingUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request,
