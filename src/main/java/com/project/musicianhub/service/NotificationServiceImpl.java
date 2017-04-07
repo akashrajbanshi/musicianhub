@@ -104,7 +104,7 @@ public class NotificationServiceImpl implements NotificationService {
 	}
 
 	/**
-	 * Creates teh user notification token for the current user
+	 * Creates the user notification token for the current user
 	 * 
 	 * @param notificationToken
 	 */
