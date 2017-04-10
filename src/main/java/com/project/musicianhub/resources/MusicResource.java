@@ -89,7 +89,7 @@ public class MusicResource {
 	 *            gets current request parameters such as server name and port
 	 * @return music list
 	 */
-
+	@GET
 	@Path("/usermusic/{user_id}/{firstResult}")
 	public List<Music> getMusicByUser(@PathParam("user_id") int user_id, @Context HttpServletRequest request,
 			@PathParam("firstResult") int firstResult) {
