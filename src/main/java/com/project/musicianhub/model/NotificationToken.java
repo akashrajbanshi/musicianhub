@@ -31,6 +31,17 @@ public class NotificationToken {
 	@Column
 	private String token;
 
+	public NotificationToken() {
+		super();
+	}
+
+	public NotificationToken(int id, User user, String token) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.token = token;
+	}
+
 	public int getId() {
 		return id;
 	}

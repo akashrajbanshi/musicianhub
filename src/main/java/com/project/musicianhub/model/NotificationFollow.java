@@ -35,6 +35,18 @@ public class NotificationFollow {
 	@Column
 	private boolean viewed;
 
+	public NotificationFollow() {
+		super();
+	}
+
+	public NotificationFollow(int id, User fromUser, User toUser, boolean viewed) {
+		super();
+		this.id = id;
+		this.fromUser = fromUser;
+		this.toUser = toUser;
+		this.viewed = viewed;
+	}
+
 	public int getId() {
 		return id;
 	}

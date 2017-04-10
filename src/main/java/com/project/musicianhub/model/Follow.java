@@ -34,6 +34,20 @@ public class Follow {
 
 	@Column
 	private boolean follow_status;
+	
+	
+
+	public Follow() {
+		super();
+	}
+
+	public Follow(int id, User followingUser, User followerUser, boolean follow_status) {
+		super();
+		this.id = id;
+		this.followingUser = followingUser;
+		this.followerUser = followerUser;
+		this.follow_status = follow_status;
+	}
 
 	public int getId() {
 		return id;

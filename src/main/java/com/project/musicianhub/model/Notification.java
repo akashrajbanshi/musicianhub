@@ -41,6 +41,20 @@ public class Notification {
 	@Column
 	private boolean viewed;
 
+	public Notification() {
+		super();
+	}
+
+	public Notification(int id, String type, User fromUser, User toUser, Music music, boolean viewed) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.fromUser = fromUser;
+		this.toUser = toUser;
+		this.music = music;
+		this.viewed = viewed;
+	}
+
 	public int getId() {
 		return id;
 	}

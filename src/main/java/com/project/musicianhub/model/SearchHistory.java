@@ -31,6 +31,17 @@ public class SearchHistory {
 	@JoinColumn(name = "user_id")
 	private User user = new User();
 
+	public SearchHistory() {
+		super();
+	}
+
+	public SearchHistory(int id, Music music, User user) {
+		super();
+		this.id = id;
+		this.music = music;
+		this.user = user;
+	}
+
 	public int getId() {
 		return id;
 	}
